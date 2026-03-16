@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("material/ttf/minecraft.ttf");
+}
+
+body {
+    font-family: "Minecraft";
+    cursor: url("material/cur/Minecraft's Stick.cur") 12 12, auto;
+    background: #1a1a1a;
+    background-size: 32px 32px;
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a, button, label, .card, img {
+    cursor: url("material/cur/Minecraft's Blaze Rod.cur") 12 12, pointer;
+}
+
+header {
+    background: #4a4a4a;
+    border-bottom: 8px solid #2a2a2a;
+    border-top: 8px solid #6a6a6a;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #2a2a2a;
+    padding: 8px 15px;
+    border: 4px solid #6a6a6a;
+    border-style: inset;
+    color: #aaffaa;
+    text-shadow: 2px 2px #0a5a0a;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.logo span {
+    display: inline-block;
+}
+
+.lang {
+    display: flex;
+    gap: 5px;
+    background: #2a2a2a;
+    padding: 5px;
+    border: 4px solid #6a6a6a;
+    border-style: inset;
+}
+
+.lang-btn {
+    background: #3a3a3a;
+    color: #ccc;
+    border: 3px solid #6a6a6a;
+    border-style: outset;
+    padding: 5px 15px;
+    font-family: "Minecraft";
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #3a3a3a;
+    border: 4px solid #6a6a6a;
+    border-style: outset;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #5a5a5a;
+    border-style: inset;
+    color: #ffffaa;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px;
+}
+
+.title {
+    color: gold;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 3px 3px #5a3a0a;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    color: #ffaa00;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 24px;
+}
+
+h2 {
+    color: #ffaa00;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+h3 {
+    color: #55aaff;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #6a6a6a;
+    border-style: inset;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: #2a2a2a;
+    border: 8px solid #5a5a5a;
+    border-style: groove;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.card {
+    background: #2a2a2a;
+    border: 6px solid #5a5a5a;
+    border-style: ridge;
+    padding: 20px;
+}
+
+
+
+.card.secret {
+    background: #2a2a0a;
+    border-color: #6b6b1a;
+}
+
+.card.secret h2 {
+    color: #ff4;
+}
+
+.block {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.gif-box, .video-box {
+    background: #1a1a1a;
+    border: 6px solid #5a5a5a;
+    border-style: inset;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #1e1e1e;
+    border-top: 8px solid #4b4b4b;
+    padding: 30px;
+    text-align: center;
+    color: #8f8f8f;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* По умолчанию скрываем английский, показываем русский */
+.en {
+    display: none !important;
+}
+
+.ru {
+    display: block;
+}
+
+/* Для ссылок и заголовков */
+nav a.en,
+h1.en,
+h2.en,
+h3.en,
+span.en {
+    display: none !important;
+}
+
+nav a.ru,
+h1.ru,
+h2.ru,
+h3.ru,
+span.ru {
+    display: inline-block;
+}
+
+/* При выборе английского */
+#lang-en:checked ~ main .en,
+#lang-en:checked ~ footer .en,
+#lang-en:checked ~ header .en {
+    display: block !important;
+}
+
+#lang-en:checked ~ main .ru,
+#lang-en:checked ~ footer .ru,
+#lang-en:checked ~ header .ru {
+    display: none !important;
+}
+
+#lang-en:checked ~ main h1.en,
+#lang-en:checked ~ main h2.en,
+#lang-en:checked ~ main h3.en,
+#lang-en:checked ~ header nav a.en,
+#lang-en:checked ~ header span.en {
+    display: inline-block !important;
+}
+
+/* Оформление кнопок */
+#lang-ru:checked ~ header .lang label[for="lang-ru"],
+#lang-en:checked ~ header .lang label[for="lang-en"] {
+    background: #5a8f5a;
+    color: white;
+    border-style: inset;
+    border-color: #2a5a2a;
+}
